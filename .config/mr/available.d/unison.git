@@ -1,0 +1,6 @@
+[.unison]
+order=1
+checkout = git clone git@github.com:vanicat/unison-conf.git .unison ||
+         git clone git://github.com/vanicat/unison-conf.git .unison &&
+         cd .unison &&
+         make
