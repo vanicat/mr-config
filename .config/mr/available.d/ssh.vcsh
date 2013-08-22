@@ -1,0 +1,2 @@
+[.config/vcsh/repo.d/ssh.git]
+checkout = vcsh clone 'user-data@lot-of-stuff.info:git-repos/vcsh/ssh.git' ssh
