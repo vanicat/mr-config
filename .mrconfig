@@ -11,8 +11,6 @@ include = cat $HOME/.config/mr/config.d/*
 # push = echo doing nothing
 # update= echo doing nothing
 
-[.emacs.d/src/magit/]
-push = echo doing nothing
 
 # [.emacs.d/src/rinari/]
 # push = echo doing nothing

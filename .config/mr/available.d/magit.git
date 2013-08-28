@@ -1,0 +1,2 @@
+[.emacs.d/src/magit/]
+push = echo doing nothing
