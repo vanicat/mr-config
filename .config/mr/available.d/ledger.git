@@ -1,0 +1,7 @@
+[prog/ledger/ledger]
+checkout = mkdir -p prog/ledger
+         git clone git://github.com/ledger/ledger.git prog/ledger/ledger;
+         cd ~/prog/ledger
+         git remote add -f mine git@github.com:vanicat/ledger.git
+         git checkout -b local origin/master
+push = echo doing nothing
