@@ -62,9 +62,3 @@ todisk = udisks --mount /dev/disk/by-id/usb-LaCie_RuggedKey_1301040000000197-0:0
 
 [prog/ledger/ledger]
 push = echo doing nothing
-
-[Bibliothèque calibre]
-update = git annex sync ; git annex get
-push = git annex add . 
-     git annex sync
-fullsync = git annex add .; git annex sync; git annex get 

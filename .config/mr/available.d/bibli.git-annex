@@ -1,0 +1,10 @@
+[Bibliothèque calibre]
+checkout = git clone "moi@corbeau:Bibliothèque calibre"
+         git remote add "moi@gobelin:Bibliothèque calibre"
+         git annex init;
+         git annex sync;
+         git annex get
+update = git annex sync ; git annex get
+push = git annex add .
+     git annex sync
+fullsync = git annex add .; git annex sync; git annex get
