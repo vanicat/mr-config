@@ -7,9 +7,6 @@ jobs = 5
 
 include = cat $HOME/.config/mr/config.d/*
 
-[.emacs.d/src/GIMME/]
-push = echo doing nothing
-
 [.myconfig]
 fixups = make -L
 checkout = git clone user-data@lot-of-stuff.info:git-repos/myconfig.git .myconfig/ &&
