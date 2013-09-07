@@ -1,0 +1,4 @@
+[.myconfig]
+fixups = make -L
+checkout = git clone user-data@lot-of-stuff.info:git-repos/myconfig.git .myconfig/ &&
+         git submodule update --init

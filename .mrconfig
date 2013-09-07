@@ -7,11 +7,6 @@ jobs = 5
 
 include = cat $HOME/.config/mr/config.d/*
 
-[.myconfig]
-fixups = make -L
-checkout = git clone user-data@lot-of-stuff.info:git-repos/myconfig.git .myconfig/ &&
-         git submodule update --init
-
 [.config/awesome/]
 checkout = git clone git@github.com:vanicat/awesome-configs.git awesome/  &&
          cd awesome/ &&
