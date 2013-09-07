@@ -7,9 +7,6 @@ jobs = 5
 
 include = cat $HOME/.config/mr/config.d/*
 
-[account/]
-checkout = git clone user-data@lot-of-stuff.info:git-repos/account.git account
-
 [org]
 checkout = git clone user-data@lot-of-stuff.info:git-repos/org.git
 
