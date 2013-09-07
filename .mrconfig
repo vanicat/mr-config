@@ -7,14 +7,6 @@ jobs = 5
 
 include = cat $HOME/.config/mr/config.d/*
 
-[.config/awesome/]
-checkout = git clone git@github.com:vanicat/awesome-configs.git awesome/  &&
-         cd awesome/ &&
-         git submodule update --init &&
-         cd awesome-freedesktop &&
-         git checkout master &&
-         cd ..
-
 
 [.config/awesome/awesome-freedesktop/]
 push = echo doing nothing
