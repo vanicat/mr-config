@@ -1,5 +1,5 @@
 [.config/mr/config.d]
 status = cd ~/.config/mr/available.d/
          for i in *; do if ! [ -e ../config.d/$i ]; then echo \?\? $i; fi; done
-push =
-update =
+push = true
+update = true
