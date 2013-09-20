@@ -1,6 +1,13 @@
 [/media/Rugged_Key/travail/]
 update = git annex sync --quiet
-         git annex get --fast --quiet cours/P_SSI cours/SpeTES cours/SpeTS cours/TESX cours/Trombi cours/TSTG
+         git annex get --fast --quiet cours/*
+
+push   = git annex copy --to corbeau.bare --auto --quiet || git annex copy --to gobelin.bare --auto --quiet
+record = git annex sync --quiet
+
+[/media/moi/Rugged_Key/travail/]
+update = git annex sync --quiet
+         git annex get --fast --quiet cours/*
 
 push   = git annex copy --to corbeau.bare --auto --quiet || git annex copy --to gobelin.bare --auto --quiet
 record = git annex sync --quiet
