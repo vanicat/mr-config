@@ -4,7 +4,7 @@ checkout = false
 update = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
        git annex sync || true
        git annex get . || true
-       udisks unmount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
+       udisksctl unmount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
 
 push   = git annex copy --to local --auto --quiet --fast
        git annex copy --to server --auto --quiet --fast
