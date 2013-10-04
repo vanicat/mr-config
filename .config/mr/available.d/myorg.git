@@ -1,2 +1,5 @@
 [org]
 checkout = git clone user-data@lot-of-stuff.info:git-repos/org.git
+push = git add -u
+       git commit --no-status -m "automatic commit" || true
+       git push
