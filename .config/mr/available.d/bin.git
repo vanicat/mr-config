@@ -1,0 +1,2 @@
+[bin/]
+checkout = git clone user-data@lot-of-stuff.info:git-repos/bin.git

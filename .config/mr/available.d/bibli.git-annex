@@ -4,7 +4,11 @@ checkout = git clone "moi@corbeau:Bibliothèque calibre"
          git annex init;
          git annex sync;
          git annex get
-update = git annex sync ; git annex get
-push = git annex add .
+update = test ! -e ~/.calibre_calibre\ GUI.lock
+       git annex sync
+       git annex get
+push = test ! -e ~/.calibre_calibre\ GUI.lock
+     git annex add .
      git annex sync
-fullsync = git annex add .; git annex sync; git annex get
+fullsync = test ! -e ~/.calibre_calibre\ GUI.lock
+         git annex add .; git annex sync; git annex get

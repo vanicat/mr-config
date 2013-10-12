@@ -1,0 +1,9 @@
+[texmf]
+checkout = git clone git@github.com:vanicat/myhead.git texmf
+todisk = udisks --mount /dev/disk/by-id/usb-LaCie_RuggedKey_1301040000000197-0:0
+       cd /media/moi/Rugged_Key/texmf || cd /media/Rugged_Key/texmf
+       git fetch $HOST
+       git merge $HOST/master
+       sync
+       cd
+       udisks --unmount /dev/disk/by-id/usb-LaCie_RuggedKey_1301040000000197-0:0
