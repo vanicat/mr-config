@@ -11,21 +11,20 @@ push   = git annex copy --to local --auto --quiet --fast
 fetch  = git annex sync --quiet
 record = git annex add .
 
-todisk = git annex copy --to local --auto --quiet --fast
-       udisks --mount /dev/disk/by-id/usb-LaCie_RuggedKey_1301040000000197-0:0
-       cd /media/moi/Rugged_Key/travail || cd /media/Rugged_Key/travail
+todisk = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1
+       cd /media/moi/9823-6704/travail/
        mr update
        sync
        cd
-       udisks --unmount /dev/disk/by-id/usb-LaCie_RuggedKey_1301040000000197-0:0
+       udisksctl unmount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1
 
-fullsync = udisks --mount /dev/disk/by-id/usb-LaCie_RuggedKey_1301040000000197-0:0 || true
+fullsync = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
        git annex sync || true
        git annex get . || true
        git annex copy --to local --auto --quiet --fast
        git annex copy --to server --auto --quiet --fast
-       cd /media/moi/Rugged_Key/travail || cd /media/Rugged_Key/travail
+       cd /media/moi/9823-6704/travail/
        mr update
        sync
        cd
-       udisks --unmount /dev/disk/by-id/usb-LaCie_RuggedKey_1301040000000197-0:0
+       udisksctl unmount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1
