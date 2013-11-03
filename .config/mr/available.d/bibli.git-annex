@@ -4,11 +4,15 @@ checkout = git clone "moi@corbeau:Bibliothèque calibre"
          git annex init;
          git annex sync;
          git annex get
-update = test ! -e ~/.calibre_calibre\ GUI.lock
+update = ! lsof /home/moi/Bibliothèque\ calibre/metadata.db | grep --silent calibre
        git annex sync
        git annex get
-push = test ! -e ~/.calibre_calibre\ GUI.lock
+push = ! lsof /home/moi/Bibliothèque\ calibre/metadata.db | grep --silent calibre
      git annex add .
      git annex sync
-fullsync = test ! -e ~/.calibre_calibre\ GUI.lock
-         git annex add .; git annex sync; git annex get
+fullsync = ! lsof /home/moi/Bibliothèque\ calibre/metadata.db | grep --silent calibre
+         git annex add .
+         git add -A .
+         git annex sync
+         git annex get
+         git annex --quiet copy --to=hubic --fast
