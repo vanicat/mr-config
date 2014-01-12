@@ -6,13 +6,12 @@ update = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F
        git annex get . || true
        udisksctl unmount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
 
-push   = git annex copy --to local --auto --quiet --fast
-       git annex copy --to server --auto --quiet --fast
+push   = git annex copy --to server --auto --quiet --fast
 fetch  = git annex sync --quiet
 record = git annex add .
 
-todisk = git annex copy --to local --auto --quiet --fast
-       udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1
+todisk = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
+       git annex sync SanDIsk
        cd /media/moi/9823-6704/travail
        mr update
        sync
@@ -22,8 +21,9 @@ todisk = git annex copy --to local --auto --quiet --fast
 fullsync = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
        git annex sync || true
        git annex get . || true
-       git annex copy --to local --auto --quiet --fast
-       git annex copy --to server --auto --quiet --fast
+       git annex copy --to server --auto --quiet --fast || true
+       [ `hostname` == corbeau ] && git annex copy --to gobelin --auto --quiet --fast || true
+       [ `hostname` == gobelin ] && git annex copy --to corbeau --auto --quiet --fast || true
        cd /media/moi/9823-6704/travail
        mr update
        sync
