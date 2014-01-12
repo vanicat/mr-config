@@ -3,5 +3,10 @@
 !/.config/mr
 !/.config/mr/available.d
 !/.config/mr/available.d/*
+!/.config/mr/config.d
+!/.config/mr/config.d/mr-config.dummy
+!/.config/mr/config.d/mr.vcsh
+!/.gitignore.d
+!/.gitignore.d/mr
 !/.mrconfig
 !/.mrtrust

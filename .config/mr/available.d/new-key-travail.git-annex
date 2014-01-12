@@ -1,0 +1,13 @@
+[/media/moi/9823-6704/travail]
+update = git annex sync --quiet
+         git annex get --auto --fast --quiet
+
+push   = git annex copy --to corbeau.bare --auto --quiet || git annex copy --to gobelin.bare --auto --quiet
+record = git annex sync --quiet
+
+[/media/9823-6704/travail]
+update = git annex sync --quiet
+         git annex get --auto --fast --quiet
+
+push   = git annex copy --to corbeau.bare --auto --quiet || git annex copy --to gobelin.bare --auto --quiet
+record = git annex sync --quiet

@@ -1,0 +1,13 @@
+[org]
+checkout = git clone user-data@lot-of-stuff.info:git-repos/org.git
+         git remote add SanDisk /media/moi/9823-6704/org/
+
+update = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
+       git pull SanDisk master || true
+       udisksctl unmount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
+       git pull
+
+push = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
+       (cd /media/moi/9823-6704/org/; git pull; cd ~/org ) || true
+       udisksctl unmount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
+       git push

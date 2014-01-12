@@ -1,9 +1,11 @@
 [Bibliothèque calibre]
-checkout = git clone "moi@corbeau:Bibliothèque calibre"
-         git remote add "moi@gobelin:Bibliothèque calibre"
+checkout = git clone "user-data@lot-of-stuff.info:git-repos/Bibliothèque calibre.git"
          git annex init;
          git annex sync;
-         git annex get
+         git annex get;
+         git annex enableremote hubic
+         /home/moi/lang/git-annex/swift/hubic-git-annex-hook --init
+         echo "Je doits configurer hubic"
 update = ! lsof /home/moi/Bibliothèque\ calibre/metadata.db | grep --silent calibre
        git annex sync
        git annex get
