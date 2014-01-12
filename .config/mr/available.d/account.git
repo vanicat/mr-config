@@ -1,0 +1,2 @@
+[account/]
+checkout = git clone user-data@lot-of-stuff.info:git-repos/account.git account

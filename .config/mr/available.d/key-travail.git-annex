@@ -1,13 +1,16 @@
-[/media/Rugged_Key/travail/]
+[/media/9823-6704/travail]
 update = git annex sync --quiet
-         git annex get --fast --quiet cours/*
+         git annex get --fast --auto
 
-push   = git annex copy --to corbeau.bare --auto --quiet || git annex copy --to gobelin.bare --auto --quiet
+push   = git annex sync --quiet
+         git annex copy --to corbeau --auto --quiet || git annex copy --to gobelin --auto --quiet
 record = git annex sync --quiet
 
-[/media/moi/Rugged_Key/travail/]
+[/media/moi/9823-6704/travail]
 update = git annex sync --quiet
-         git annex get --fast --quiet cours/*
+         git annex get --fast --auto
 
-push   = git annex copy --to corbeau.bare --auto --quiet || git annex copy --to gobelin.bare --auto --quiet
+push   = git annex sync --quiet
+         git annex copy --to corbeau --auto --quiet || git annex copy --to gobelin --auto --quiet
+
 record = git annex sync --quiet
