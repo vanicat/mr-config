@@ -1,15 +1,15 @@
 [/media/9823-6704/travail]
-update = git annex sync --quiet
+update = git annex sync --quiet $(hostname)
          git annex get --fast --auto
 
-push   = git annex sync --quiet
-       git annex copy --to corbeau.bare --auto --quiet || git annex copy --to gobelin.bare --auto --quiet
-record = git annex sync --quiet
+push   = git annex sync --quiet $(hostname)
+       git annex copy --to $(hostname) --auto --quiet
+record = git annex sync --quiet $(hostname)
 
 [/media/moi/9823-6704/travail]
-update = git annex sync --quiet
+update = git annex sync --quiet $(hostname)
          git annex get --fast --auto
 
-push   = git annex sync --quiet
-       git annex copy --to corbeau.bare --auto --quiet || git annex copy --to gobelin.bare --auto --quiet
-record = git annex sync --quiet
+push   = git annex sync --quiet $(hostname)
+       git annex copy --to $(hostname) --auto --quiet
+record = git annex sync --quiet $(hostname)
