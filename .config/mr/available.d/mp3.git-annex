@@ -1,8 +1,9 @@
 [mp3]
-        skip = true
-        update = git annex sync --quiet
-                 git annex get --auto --fast --quiet
+skip = true
+update = git annex sync --quiet
+         git annex get --auto --fast --quiet
 
-        push   = git annex sync --quiet
-                 git annex copy --to toubib --auto --quiet || git annex copy --to madame --auto --quiet
-        record = git annex sync --quiet
+push   = git annex sync --quiet
+         git annex copy --to toubib --auto --quiet || git annex copy --to madame --auto --quiet
+record = git annex sync --quiet
+fullsync = git annex sync --content
