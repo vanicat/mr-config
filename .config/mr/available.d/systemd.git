@@ -1,0 +1,4 @@
+[.config/systemd]
+checkout = git clone moi@toubib:.config/systemd .config/systemd
+         cd .config/systemd &&
+         git submodule update --init &&
