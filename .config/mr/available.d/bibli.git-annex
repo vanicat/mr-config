@@ -12,6 +12,10 @@ push = [ "$(lsof -c calibre -a /home/moi/Bibliothèque\ calibre/metadata.db)" ==
      git annex add .
      git add -A .
      git annex sync --content
+commit = [ "$(lsof -c calibre -a /home/moi/Bibliothèque\ calibre/metadata.db)" == "" ]
+     git annex add .
+     git add -A .
+     git commit -m "automatic commit"
 fullsync = [ "$(lsof -c calibre -a /home/moi/Bibliothèque\ calibre/metadata.db)" == "" ]
          git annex add .
          git add -A .

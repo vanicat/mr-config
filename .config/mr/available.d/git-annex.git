@@ -1,0 +1,3 @@
+[lang/git-annex/git-annex.branchable.com]
+checkout = git clone 'git://git-annex.branchable.com/' 'git-annex.branchable.com'
+push = echo doing nothing

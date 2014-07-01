@@ -1,0 +1,3 @@
+[.emacs.d/src/git-annex]
+checkout = git clone 'git://github.com/jwiegley/git-annex-el.git' 'git-annex'
+push = echo doing nothing

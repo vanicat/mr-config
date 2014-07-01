@@ -1,0 +1,3 @@
+[.emacs.d/src/epresent]
+checkout = git clone 'https://github.com/eschulte/epresent.git' 'epresent'
+push = echo doing nothing
