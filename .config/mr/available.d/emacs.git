@@ -1,5 +1,5 @@
 [.emacs.d]
-checkout = git clone git@github.com:vanicat/emacs-starter-kit.git .emacs.d &&
+checkout = git clone git@github.com:vanicat/emacs24-starter-kit.git --branch my-change .emacs.d &&
          cd .emacs.d &&
          git submodule update --init &&
          (git submodule update --init --recursive || true) &&
