@@ -1,4 +1,4 @@
-[travail]
+[travail/tools]
 order=2
 checkout = false
 update = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true

@@ -1,28 +1,32 @@
 [travail]
 order=2
 checkout = false
-update = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
-       git annex sync --content || true
-       udisksctl unmount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
+update = lsof -p $(cat ~/travail/.git/annex/daemon.pid) -t -a ~/travail/.git/annex/daemon.pid > /dev/null || git annex sync --content
+       lsof -p $(cat ~/travail/.git/annex/daemon.pid) -t -a ~/travail/.git/annex/daemon.pid > /dev/null && git annex merge
 
 push   = git annex copy --to server --auto --quiet --fast
-fetch  = git annex sync --quiet
+fetch  = git remote update
 record = git annex add .
 
-todisk = git annex sync SanDIsk --content
+todisk = lsof -p $(cat ~/travail/.git/annex/daemon.pid) -t -a ~/travail/.git/annex/daemon.pid > /dev/null || git annex sync SanDIsk --content
        pushd /media/moi/A4AB-2C65/travail/
+       echo fetching
+       git fetch $(hostname)
+       echo merging
        git annex merge
+       echo getting
+       git annex get --auto
        sync
        popd
-       git remote update
+       git fetch SanDIsk
        git merge SanDIsk/annex/direct/master
 
 fullsync = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
-       git annex sync || true
+       lsof -p $(cat ~/travail/.git/annex/daemon.pid) -t -a ~/travail/.git/annex/daemon.pid > /dev/null || git annex sync || true
        git annex get . || true
        git annex copy --to server --auto --quiet --fast || true
-       [ `hostname` == corbeau ] && git annex copy --to gobelin --auto --quiet --fast || true
-       [ `hostname` == gobelin ] && git annex copy --to corbeau --auto --quiet --fast || true
+       [ `hostname` == madame ] && git annex copy --to volesprit --auto --quiet --fast || true
+       [ `hostname` == volesprit ] && git annex copy --to madame --auto --quiet --fast || true
        cd /media/moi/9823-6704/travail
        mr update
        sync
