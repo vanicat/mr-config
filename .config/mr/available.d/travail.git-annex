@@ -10,11 +10,18 @@ fetch  = git annex sync --quiet
 record = git annex add .
 
 todisk = git annex sync SanDIsk --content
-       pushd /media/moi/A4AB-2C65/travail/
+       cd /media/moi/A4AB-2C65/travail/
        git annex merge
        sync
-       popd
-       git remote update
+       cd ~/travail/
+       git fetch SanDIsk
+       git merge SanDIsk/annex/direct/master
+
+quicktodisk = cd /media/moi/A4AB-2C65/travail/
+       git annex merge
+       sync
+       cd ~/travail/
+       git fetch SanDIsk
        git merge SanDIsk/annex/direct/master
 
 fullsync = udisksctl mount -b /dev/disk/by-id/usb-SanDisk_Cruzer_Edge_20035000710F175236EF-0:0-part1 || true
