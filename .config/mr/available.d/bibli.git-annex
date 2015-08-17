@@ -6,17 +6,21 @@ checkout = git clone "user-data@lot-of-stuff.info:git-repos/Bibliothèque calibr
          /home/moi/lang/git-annex/swift/hubic-git-annex-hook --init
          echo "Je doits configurer hubic"
 update = [ "$(lsof -c calibre -a /home/moi/Bibliothèque\ calibre/metadata.db)" == "" ]
-       git annex sync
-       git annex get
+       if [ "$(lsof -a /home/moi/Bibliothèque\ calibre/.git/annex/daemon.pid )" == "" ]; then
+              git annex sync
+              git annex get
+       else
+              git annex merge
+              git annex get
+        fi
 push = [ "$(lsof -c calibre -a /home/moi/Bibliothèque\ calibre/metadata.db)" == "" ]
      git annex add .
      git add -A .
-     git annex sync --content
+     git commit -m "automatic commit"
+     if [ "$(lsof -a /home/moi/Bibliothèque\ calibre/.git/annex/daemon.pid )" == "" ]; then
+            git annex sync --content
+     fi
 commit = [ "$(lsof -c calibre -a /home/moi/Bibliothèque\ calibre/metadata.db)" == "" ]
      git annex add .
      git add -A .
      git commit -m "automatic commit"
-fullsync = [ "$(lsof -c calibre -a /home/moi/Bibliothèque\ calibre/metadata.db)" == "" ]
-         git annex add .
-         git add -A .
-         git annex sync --content
