@@ -1,3 +1,4 @@
 [.emacs.d/src/org-caldav]
 checkout = git clone 'git://github.com/dengste/org-caldav.git' 'org-caldav'
 push = echo doing nothing
+update = git remote update
